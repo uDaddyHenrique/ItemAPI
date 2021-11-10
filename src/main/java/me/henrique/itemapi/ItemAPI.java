@@ -30,7 +30,7 @@ public class ItemAPI extends JavaPlugin {
                 ItemStack skull = new SkullBuilder("http://textures.minecraft.net/texture/e2b35bda5ebdf135f4e71ce49726fbec5739f0adedf01c519e2aea7f51951ea2", true).setDisplayName("&aCabeça Personalizada").setLore("§aLore 1", "§bLore 2.").toItemStack();
                 player.getInventory().setItem(1, skull);
                 //GIVANDO UM ITEM UTILIZANDO A CLASS ItemBuilder
-                ItemStack itemBuilder = new ItemBuilder(Material.DIAMOND_SWORD).setDisplayName("§aEspada Legal").setLore("§aLore 1.", "§bLore 2.").setEnchant(Enchantment.DAMAGE_ALL, 2, true).setUnbreaking(true).toItemStack();
+                ItemStack itemBuilder = new ItemBuilder(Material.DIAMOND_SWORD).setDisplayName("§aEspada Legal").setLore("§aLore 1.", "§bLore 2.").addEnchant(Enchantment.DAMAGE_ALL, 2).setUnbreaking(true).toItemStack();
                 player.getInventory().setItem(2, itemBuilder);
                 player.sendMessage("§aItem givado com sucesso.");
                 return true;

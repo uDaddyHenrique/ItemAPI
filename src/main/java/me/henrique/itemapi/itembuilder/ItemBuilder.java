@@ -21,7 +21,7 @@ import java.util.Arrays;
 * como posso adicionar uma lore ao item?
 * ItemStack item = new ItemBuilder(Material.DIAMOND_SWORD).setLore("§aLore 1", "§bLore 2").toItemStack();
 * como posso adicionar um encantamento ao item?
-* ItemStack item = new ItemBuilder(Material.DIAMOND_SWORD).setEnchant(Enchantment.DAMAGE_ALL, 2, true).toItemStack(); Obs: LEMBRANDO QUE PODE UTILIZAR QUALQUER ENCANTAMENTO BASTA VER OS DISPONÍVEIS EM https://helpch.at/docs/1.8.8/index.html?org/bukkit/enchantments/Enchantment.html
+* ItemStack item = new ItemBuilder(Material.DIAMOND_SWORD).addEnchant(Enchantment.DAMAGE_ALL, 2).toItemStack(); Obs: LEMBRANDO QUE PODE UTILIZAR QUALQUER ENCANTAMENTO BASTA VER OS DISPONÍVEIS EM https://helpch.at/docs/1.8.8/index.html?org/bukkit/enchantments/Enchantment.html
 * como posso deixar o item inquebravél?
 * ItemStack item = new ItemBuilder(Material.DIAMOND_SWORD).setUnbreaking(true).toItemStack();
  */
@@ -56,9 +56,9 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder setEnchant(Enchantment enchant, int level, boolean active){
+    public ItemBuilder addEnchant(Enchantment enchant, int level){
         ItemMeta meta = itemStack.getItemMeta();
-        meta.addEnchant(enchant, level, active);
+        meta.addEnchant(enchant, level, true);
         itemStack.setItemMeta(meta);
         return this;
     }
