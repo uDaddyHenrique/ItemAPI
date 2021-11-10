@@ -1,0 +1,5 @@
+name: ItemAPI
+version: 1.0
+main: me.henrique.itemapi.ItemAPI
+commands:
+  item:
