@@ -69,8 +69,14 @@ public class ItemBuilder {
         itemStack.setItemMeta(meta);
         return this;
     }
-
+    @Deprecated
     public ItemStack toItemStack(){
+        ItemMeta meta = itemStack.getItemMeta();
+        itemStack.setItemMeta(meta);
+        return itemStack;
+    }
+
+    public ItemStack build(){
         ItemMeta meta = itemStack.getItemMeta();
         itemStack.setItemMeta(meta);
         return itemStack;
